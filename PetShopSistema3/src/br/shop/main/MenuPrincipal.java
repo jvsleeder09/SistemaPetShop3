@@ -45,6 +45,7 @@ public class MenuPrincipal extends JFrame {
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 822, 527);
+		setLocationRelativeTo(null); // centralizar a janela
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -59,6 +60,7 @@ public class MenuPrincipal extends JFrame {
 		contentPane.add(btnCliente);
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				TelaCliente tela = new TelaCliente();
 				tela.setVisible(true);
 			}
@@ -76,6 +78,7 @@ public class MenuPrincipal extends JFrame {
 		contentPane.add(btnPet);
 		btnPet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				TelaPet tela = new TelaPet();
 				tela.setVisible(true);
 			}
@@ -90,6 +93,7 @@ public class MenuPrincipal extends JFrame {
 		contentPane.add(btnServico);
 		btnServico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				TelaServico tela = new TelaServico();
 				tela.setVisible(true);
 			}
@@ -116,6 +120,7 @@ public class MenuPrincipal extends JFrame {
 
 		btnListarAgendamentos.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
+		    	dispose();
 		        TelaListarAgendamentos tela = new TelaListarAgendamentos();
 		        tela.setVisible(true);
 		    }
@@ -150,6 +155,7 @@ public class MenuPrincipal extends JFrame {
 								contentPane.add(btnCancelar);
 								btnCancelar.addActionListener(new ActionListener() {
 								    public void actionPerformed(ActionEvent e) {
+								    	dispose();
 								        TelaCancelarServico tela = new TelaCancelarServico();
 								        tela.setVisible(true);
 								    }

@@ -16,10 +16,10 @@ public class TelaCliente extends JFrame {
     private JTextField textEmail;
 
     public TelaCliente() {
-    	setAlwaysOnTop(true);
         setTitle("Cadastro de Cliente");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 822, 527);
+        setLocationRelativeTo(null); // centralizar a janela
         contentPane = new JPanel();
         contentPane.setBackground(new Color(0, 0, 0));
         contentPane.setLayout(null);
@@ -47,6 +47,9 @@ public class TelaCliente extends JFrame {
         contentPane.add(lblNome);
 
         textNome = new JTextField();
+        textNome.setForeground(new Color(0, 0, 0));
+        textNome.setHorizontalAlignment(SwingConstants.CENTER);
+        textNome.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         textNome.setBounds(321, 110, 404, 32);
         textNome.setBackground(new Color(100, 149, 237));
         contentPane.add(textNome);
@@ -59,6 +62,9 @@ public class TelaCliente extends JFrame {
         contentPane.add(lblTelefone);
 
         textTelefone = new JTextField();
+        textTelefone.setForeground(new Color(0, 0, 0));
+        textTelefone.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
+        textTelefone.setHorizontalAlignment(SwingConstants.CENTER);
         textTelefone.setBounds(321, 182, 404, 32);
         textTelefone.setBackground(new Color(100, 149, 237));
         contentPane.add(textTelefone);
@@ -71,6 +77,9 @@ public class TelaCliente extends JFrame {
         contentPane.add(lblEmail);
 
         textEmail = new JTextField();
+        textEmail.setForeground(new Color(0, 0, 0));
+        textEmail.setHorizontalAlignment(SwingConstants.CENTER);
+        textEmail.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         textEmail.setBounds(321, 254, 404, 32);
         textEmail.setBackground(new Color(100, 149, 237));
         contentPane.add(textEmail);
@@ -108,24 +117,26 @@ public class TelaCliente extends JFrame {
                 String email = textEmail.getText().trim();
 
                 if (nome.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "⚠️ Preencha todos os campos.");
+                    JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
                     return;
                 }
 
                 if (!telefone.matches("\\d{8,}")) {
-                    JOptionPane.showMessageDialog(null, "⚠️ Telefone deve conter ao menos 8 números.");
+                    JOptionPane.showMessageDialog(null, "Telefone deve conter ao menos 8 números.");
                     return;
                 }
 
                 if (!email.contains("@") || !email.contains(".")) {
-                    JOptionPane.showMessageDialog(null, "⚠️ E-mail inválido.");
+                    JOptionPane.showMessageDialog(null, "E-mail inválido.");
                     return;
                 }
 
                 Cliente cliente = new Cliente(nome, telefone, email);
                 BancoDeDadosFake.clientes.add(cliente);
-                JOptionPane.showMessageDialog(null, "✅ Cliente cadastrado com sucesso!");
+                JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
                 dispose();
+                MenuPrincipal menu = new MenuPrincipal(); // reabre o menu principal
+                menu.setVisible(true);
             }
         });
     }

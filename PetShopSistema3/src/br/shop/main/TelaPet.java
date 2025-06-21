@@ -19,10 +19,10 @@ public class TelaPet extends JFrame {
     private JTextField textNomeCliente;
 
     public TelaPet() {
-    	setAlwaysOnTop(true);
         setTitle("Cadastro de Pet");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 821, 527);
+        setBounds(100,100,822, 527);
+        setLocationRelativeTo(null); // centralizar a janela
         contentPane = new JPanel();
         contentPane.setBackground(Color.BLACK);
         contentPane.setLayout(null);
@@ -50,6 +50,9 @@ public class TelaPet extends JFrame {
         contentPane.add(lblNomePet);
 
         textNomePet = new JTextField();
+        textNomePet.setForeground(new Color(0, 0, 0));
+        textNomePet.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
+        textNomePet.setHorizontalAlignment(SwingConstants.CENTER);
         textNomePet.setBounds(428, 80, 317, 34);
         textNomePet.setBackground(new Color(100, 149, 237));
         contentPane.add(textNomePet);
@@ -62,6 +65,9 @@ public class TelaPet extends JFrame {
         contentPane.add(lblEspecie);
 
         textEspecie = new JTextField();
+        textEspecie.setForeground(new Color(0, 0, 0));
+        textEspecie.setHorizontalAlignment(SwingConstants.CENTER);
+        textEspecie.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         textEspecie.setBounds(428, 130, 317, 34);
         textEspecie.setBackground(new Color(100, 149, 237));
         contentPane.add(textEspecie);
@@ -74,6 +80,9 @@ public class TelaPet extends JFrame {
         contentPane.add(lblRaca);
 
         textRaca = new JTextField();
+        textRaca.setForeground(new Color(0, 0, 0));
+        textRaca.setHorizontalAlignment(SwingConstants.CENTER);
+        textRaca.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         textRaca.setBounds(428, 175, 317, 34);
         textRaca.setBackground(new Color(100, 149, 237));
         contentPane.add(textRaca);
@@ -86,6 +95,9 @@ public class TelaPet extends JFrame {
         contentPane.add(lblIdade);
 
         textIdade = new JTextField();
+        textIdade.setForeground(new Color(0, 0, 0));
+        textIdade.setHorizontalAlignment(SwingConstants.CENTER);
+        textIdade.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         textIdade.setBounds(428, 223, 317, 34);
         textIdade.setBackground(new Color(100, 149, 237));
         contentPane.add(textIdade);
@@ -98,6 +110,9 @@ public class TelaPet extends JFrame {
         contentPane.add(lblPeso);
 
         textPeso = new JTextField();
+        textPeso.setForeground(new Color(0, 0, 0));
+        textPeso.setHorizontalAlignment(SwingConstants.CENTER);
+        textPeso.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         textPeso.setBounds(428, 275, 317, 34);
         textPeso.setBackground(new Color(100, 149, 237));
         contentPane.add(textPeso);
@@ -110,6 +125,9 @@ public class TelaPet extends JFrame {
         contentPane.add(lblNomeCliente);
 
         textNomeCliente = new JTextField();
+        textNomeCliente.setForeground(new Color(0, 0, 0));
+        textNomeCliente.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
+        textNomeCliente.setHorizontalAlignment(SwingConstants.CENTER);
         textNomeCliente.setBounds(428, 320, 317, 34);
         textNomeCliente.setBackground(new Color(100, 149, 237));
         contentPane.add(textNomeCliente);
@@ -171,6 +189,8 @@ public class TelaPet extends JFrame {
                 cliente.adicionarPet(pet);
                 JOptionPane.showMessageDialog(null, "Pet cadastrado com sucesso!");
                 dispose();
+                MenuPrincipal menu = new MenuPrincipal(); // reabre o menu principal
+                menu.setVisible(true);
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Idade e peso devem ser numéricos válidos.");
             }

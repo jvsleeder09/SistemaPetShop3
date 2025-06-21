@@ -19,10 +19,10 @@ public class TelaCancelarServico extends JFrame {
     private java.util.List<Agendamento> agendamentosRef;
 
     public TelaCancelarServico() {
-    	setAlwaysOnTop(true);
         setTitle("Cancelar Serviço");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 822, 527);
+        setLocationRelativeTo(null); // centralizar a janela
         contentPane = new JPanel();
         contentPane.setBackground(new Color(100, 149, 237));
         contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -42,7 +42,7 @@ public class TelaCancelarServico extends JFrame {
         listaAgendamentos = new JList<>(modeloLista);
         listaAgendamentos.setForeground(new Color(0, 0, 0));
         listaAgendamentos.setValueIsAdjusting(true);
-        listaAgendamentos.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+        listaAgendamentos.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
         JScrollPane scrollPane = new JScrollPane(listaAgendamentos);
         scrollPane.setBounds(33, 71, 734, 333);
         contentPane.add(scrollPane);

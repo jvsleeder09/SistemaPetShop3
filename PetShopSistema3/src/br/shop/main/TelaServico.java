@@ -17,7 +17,6 @@ public class TelaServico extends JFrame {
     private JComboBox<String> comboServico;
 
     public TelaServico() {
-    	setAlwaysOnTop(true);
         setTitle("Agendamento de Serviço");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(822, 527);
@@ -33,9 +32,11 @@ public class TelaServico extends JFrame {
         getContentPane().add(lblCliente);
 
         textCliente = new JTextField();
+        textCliente.setForeground(new Color(0, 0, 0));
+        textCliente.setHorizontalAlignment(SwingConstants.CENTER);
         textCliente.setBounds(426, 76, 280, 35);
         textCliente.setBackground(new Color(100, 149, 237));
-        textCliente.setFont(new Font("Times New Roman", Font.ITALIC, 14));
+        textCliente.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
         getContentPane().add(textCliente);
 
         // Preenchimento Campo Pet
@@ -46,9 +47,11 @@ public class TelaServico extends JFrame {
         getContentPane().add(lblPet);
 
         textPet = new JTextField();
+        textPet.setForeground(new Color(0, 0, 0));
+        textPet.setHorizontalAlignment(SwingConstants.CENTER);
         textPet.setBounds(426, 122, 280, 35);
         textPet.setBackground(new Color(100, 149, 237));
-        textPet.setFont(new Font("Times New Roman", Font.ITALIC, 14));
+        textPet.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         getContentPane().add(textPet);
 
         // Preenchimento Campo Servico
@@ -73,9 +76,10 @@ public class TelaServico extends JFrame {
         getContentPane().add(lblData);
 
         textData = new JTextField();
+        textData.setForeground(new Color(0, 0, 0));
         textData.setBounds(426, 214, 280, 35);
         textData.setBackground(new Color(100, 149, 237));
-        textData.setFont(new Font("Times New Roman", Font.ITALIC, 14));
+        textData.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         getContentPane().add(textData);
 
         // Preenchimento Hora
@@ -86,9 +90,10 @@ public class TelaServico extends JFrame {
         getContentPane().add(lblHora);
 
         textHora = new JTextField();
+        textHora.setForeground(new Color(0, 0, 0));
         textHora.setBounds(426, 260, 280, 35);
         textHora.setBackground(new Color(100, 149, 237));
-        textHora.setFont(new Font("Times New Roman", Font.ITALIC, 14));
+        textHora.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
         getContentPane().add(textHora);
 
         // Botão para Agendar
@@ -196,6 +201,8 @@ public class TelaServico extends JFrame {
                     BancoDeDadosFake.agendamentos.add(new Agendamento(cliente, pet, servico, dataHora));
                     JOptionPane.showMessageDialog(null, "Serviço agendado com sucesso!");
                     dispose();
+                    MenuPrincipal menu = new MenuPrincipal();
+                    menu.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Dados incompletos para agendar.");
                 }

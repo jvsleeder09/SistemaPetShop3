@@ -19,10 +19,10 @@ public class TelaListarAgendamentos extends JFrame {
     private DefaultTableModel tableModel;
 
     public TelaListarAgendamentos() {
-    	setAlwaysOnTop(true);
         setTitle("Lista de Agendamentos");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 822, 574);
+        setLocationRelativeTo(null); // centralizar a janela
         contentPane = new JPanel();
         contentPane.setBackground(new Color(100, 149, 237));
         contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
