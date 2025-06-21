@@ -1,4 +1,5 @@
- 🐾 Manual de Instruções - Sistema Pet Shop (Java Swing)
+
+## 🐾 Manual de Instruções - Sistema Pet Shop (Java Swing)
 
 ## 📌 Introdução ao Projeto
 
